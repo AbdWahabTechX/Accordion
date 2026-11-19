@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 export const QAndAns = ({curEle, isActive, setActive}) => {
     const {id, question, answer} = curEle;

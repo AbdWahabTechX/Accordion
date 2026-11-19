@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Api from "../API/Ques.json"
 import { QAndAns } from "./QandAns";
 import "../src/App.css"
+import { Navbar } from "./NavBar";
 
 export const Accordion = () =>{
 
@@ -13,7 +14,9 @@ export const Accordion = () =>{
         setData(Api);
     }, [])
     return (
+        
         <div className="container">
+            <Navbar />
             <div className="question-card">
                 <h1>The Accordion</h1>
 
