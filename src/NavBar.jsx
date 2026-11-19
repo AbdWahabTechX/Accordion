@@ -1,6 +1,9 @@
 import { CiSearch, CiShoppingCart } from "react-icons/ci";
 import "./Navbar.css"
+import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 export const Navbar = () =>{
+    const[isopen, serIsopen] = useState(false);
     return(
         <div className="nav-bar">
         <nav>
@@ -16,7 +19,15 @@ export const Navbar = () =>{
                     <CiSearch />
                  </button>
             </div>
-            <ul>
+            <button
+            className="hamburger"
+            onClick={() => serIsopen(!isopen)}
+            aria-label="Toggle Navigation"
+            aria-expanded= {isopen}
+            >
+                {isopen ? <FiX/> : <FiMenu />}
+            </button>
+            <ul className={isopen ? "active": ""}>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Interview Question</a></li>
                 <li><a href="#">Join Us</a></li>
